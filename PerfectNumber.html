@@ -1,0 +1,60 @@
+<!--_[N_F]_-->
+<!DOCTYPE html>
+<html>
+<script>
+    function test() {
+        let select = []
+        let result = 0
+        let number = document.getElementById("number").value
+        for (i = 1; i < number; i++) {
+            if (number % i == 0) {
+                select.push(i)
+            }
+        } for (i = 0; i < select.length; i++) {
+            result += select[i]
+        } if (result != number || number == 0) {
+            document.getElementById("Result").innerHTML = number + " is not perfect"
+        } else {
+            document.getElementById("Result").innerHTML = number + " is perfect"
+        }
+    }    
+</script>
+<style>
+    body {
+        margin: 0 auto;
+        width: 600px;
+        background-color: #3d4043;
+        color: white;
+        text-align: center;
+    }
+
+    button {
+        font: sans-serif;
+        cursor: pointer;
+        display: inline-block;
+        margin: 0.5em;
+        border: 0;
+        width: 200px;
+        height: 30px;
+    }
+
+    td {
+        display: inline;
+        margin: 0.5em;
+        border: 0;
+    }
+</style>
+<head>
+    <h1>Perfex Number</h1>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>number</td>
+            <td><input type="text" id="number" size="45"></td>
+        </tr>
+    </table>
+    <button onclick="test()">test</button>
+    <div id="Result">number</div>
+</body>
+</html>
